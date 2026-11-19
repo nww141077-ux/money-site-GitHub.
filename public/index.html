@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой проект</title>
+<link rel="stylesheet" href="style.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114343037', 'ym');
+
+    ym(114343037, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114343037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">Мой проект</div>
+  <nav>
+    <a href="https://dzen.ru/id/63dca6f0b2189a531c500a7b" target="_blank">Мой Дзен</a>
+    <a href="#" class="btn-donate" id="donateBtn">Поддержать автора</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Практические разборы: автоматизация, стройка и заработок</h1>
+    <p>Кейсы с цифрами, скрипты и схемы, которые я проверяю на себе. Новый материал каждую неделю.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn primary" id="donateBtn2">Поддержать донатом</a>
+      <a href="https://dzen.ru/id/63dca6f0b2189a531c500a7b" target="_blank" class="btn ghost">Подписаться на Дзен</a>
+    </div>
+  </section>
+
+  <section class="articles">
+    <h2>Статьи</h2>
+    <div id="articleList"></div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Мой проект · Сделано с Node.js</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Статья — Мой проект</title>
+<link rel="stylesheet" href="style.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    ...  114343037 ...
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114343037" ... /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+</head>
+<body>
+<header class="topbar">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">Мой проект</a></div>
+  <nav>
+    <a href="https://dzen.ru/ТВОЙ_НИК" target="_blank">Мой Дзен</a>
+    <a href="#" class="btn-donate" id="donateBtn">Поддержать автора</a>
+  </nav>
+</header>
+<main>
+  <article class="card" id="articleBox" style="margin-top:24px;">
+    <div class="date" id="aDate"></div>
+    <h1 id="aTitle" style="margin-bottom:12px;"></h1>
+    <div id="aContent" style="white-space:pre-wrap;color:var(--text);"></div>
+  </article>
+  <div class="card" style="margin-top:24px;">
+    <p><b>Понравилась статья?</b> Полные версии — на моём канале в Дзене.
+    <a href="https://dzen.ru/ТВОЙ_НИК" target="_blank">Подписаться на Дзен</a> ·
+    <a href="#" id="donateBtn2">Поддержать донатом</a></p>
+  </div>
+</main>
+<footer><p>© 2026 Мой проект</p></footer>
+<script>
+const slug = new URLSearchParams(location.search).get('slug');
+fetch('data/articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const a = data.articles.find(x => x.slug === slug) || data.articles[0];
+    document.title = a.title + ' — Мой проект';
+    document.getElementById('aDate').textContent = a.date;
+    document.getElementById('aTitle').textContent = a.title;
+    document.getElementById('aContent').textContent = a.content;
+  });
+</script>
+<script src="app.js"></script>
+</body>
+</html>
