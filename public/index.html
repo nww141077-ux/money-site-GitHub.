@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мой проект</title>
-<link rel="stylesheet" href="style.css">
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практические разборы: автоматизация, стройка и заработок</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114343037', 'ym');
 
-    ym(114343037, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/114343037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(114343037, 'init', {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/114343037" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-<header class="topbar">
-  <div class="logo">Мой проект</div>
-  <nav>
-    <a href="https://dzen.ru/id/63dca6f0b2189a531c500a7b" target="_blank">Мой Дзен</a>
-    <a href="#" class="btn-donate" id="donateBtn">Поддержать автора</a>
-  </nav>
-</header>
 
-<main>
-  <section class="hero">
-    <h1>Практические разборы: автоматизация, стройка и заработок</h1>
-    <p>Кейсы с цифрами, скрипты и схемы, которые я проверяю на себе. Новый материал каждую неделю.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn primary" id="donateBtn2">Поддержать донатом</a>
-      <a href="https://dzen.ru/id/63dca6f0b2189a531c500a7b" target="_blank" class="btn ghost">Подписаться на Дзен</a>
-    </div>
-  </section>
+  <header class="topbar">
+    <div class="logo">Мой проект</div>
+    <nav>
+      <a href="plan.html">План заработка</a>
+      <a href="https://dzen.ru/id/63dca6f0b2189a531c500a7b" target="_blank" rel="noopener noreferrer">Мой Дзен</a>
+    </nav>
+    <a class="btn-donate" href="https://dzen.ru/id/63dca6f0b2189a531c500a7b?donate=true" target="_blank" rel="noopener noreferrer">Поддержать автора</a>
+  </header>
 
-  <section class="articles">
-    <h2>Статьи</h2>
-    <div id="articleList"></div>
-  </section>
-</main>
+  <main>
+    <section class="hero">
+      <h1>Практические разборы:<br>автоматизация, стройка и заработок</h1>
+      <p>Кейсы с цифрами, скрипты и схемы, которые я проверяю на себе. Новый материал каждую неделю.</p>
+      <div class="hero-buttons">
+        <a href="plan.html" class="btn primary">Посмотреть план заработка</a>
+        <a href="#articles" class="btn ghost">Читать статьи</a>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 Мой проект · Сделано с Node.js</p>
-</footer>
+    <section class="articles" id="articles">
+      <h2>Свежие статьи</h2>
 
-<script src="app.js"></script>
+      <!-- Заглушки: если app.js не сработает, будут видны карточки -->
+      <div id="articleList">
+        <div class="card">
+          <span class="date">19 ноября 2026</span>
+          <h3><a href="plan.html">Мой план заработка на 3 месяца</a></h3>
+          <p>Честный план: какие шаги, какие сроки и какие цифры я заложил. Без обещаний «миллион за неделю».</p>
+        </div>
+
+        <div class="card">
+          <span class="date">12 ноября 2026</span>
+          <h3><a href="#">Автоматизация рутины: с чего начать</a></h3>
+          <p>Первые скрипты, которые сэкономили мне часы работы. Разбор по шагам и готовые шаблоны.</p>
+        </div>
+
+        <div class="card">
+          <span class="date">5 ноября 2026</span>
+          <h3><a href="#">Стройка: как я считаю сметы</a></h3>
+          <p>Реальные цифры с объекта: материалы, работа, ошибки и что я сделал бы иначе.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Мой проект · ecsu.ru</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

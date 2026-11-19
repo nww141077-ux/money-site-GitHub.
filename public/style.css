@@ -4,50 +4,149 @@
   --accent: #6fbf8f;
   --text: #e8f0ea;
   --muted: #9ab3a4;
+  --border: #22382c;
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
 }
+
 .topbar {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 32px;
-  background: var(--panel);
-  border-bottom: 1px solid #22382c;
+  background: rgba(22, 36, 28, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
 }
-.logo { font-weight: 700; font-size: 20px; color: var(--accent); }
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
 .topbar nav a {
-  color: var(--text); text-decoration: none; margin-left: 20px;
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 24px;
+  transition: color 0.2s;
 }
+.topbar nav a:hover { color: var(--text); }
+
 .btn-donate, .btn {
-  display: inline-block; padding: 10px 20px; border-radius: 8px;
-  text-decoration: none; font-weight: 600; transition: opacity .2s;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
-.btn-donate, .btn.primary { background: var(--accent); color: #0c1712; }
-.btn.ghost { border: 1px solid var(--accent); color: var(--accent); }
-.btn:hover, .btn-donate:hover { opacity: .85; }
-main { max-width: 800px; margin: 0 auto; padding: 32px 20px; }
-.hero h1 { font-size: 30px; margin-bottom: 12px; }
-.hero p { color: var(--muted); margin-bottom: 20px; }
-.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-.articles { margin-top: 48px; }
-.articles h2 { margin-bottom: 16px; color: var(--accent); }
+
+.btn-donate {
+  background: var(--accent);
+  color: #0c1712;
+}
+.btn-donate:hover {
+  background: #5fa37b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(111, 191, 143, 0.3);
+}
+
+.btn.primary { background: var(--accent); color: #0c1712; }
+.btn.ghost {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+.btn:hover, .btn-donate:hover, .btn.ghost:hover { opacity: 0.9; }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 0;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Articles */
+.articles { margin-top: 56px; }
+.articles h2 {
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  color: var(--accent);
+  text-align: center;
+}
+
 .card {
-  background: var(--panel); border: 1px solid #22382c; border-radius: 10px;
-  padding: 20px; margin-bottom: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.card h3 a { color: var(--text); text-decoration: none; }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.card h3 a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
 .card h3 a:hover { color: var(--accent); }
-.card .date { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
-.card p { color: var(--muted); }
-footer {
-  text-align: center; padding: 24px; color: var(--muted);
-  border-top: 1px solid #22382c; margin-top: 48px;
+.card .date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  display: block;
 }
-@media (max-width: 600px) {
-  .topbar { flex-direction: column; gap: 10px; }
-  .hero h1 { font-size: 24px; }
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .topbar { flex-direction: column; gap: 16px; padding: 16px; }
+  .topbar nav a { margin: 8px 12px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-buttons { flex-direction: column; }
+  .btn, .btn-donate { width: 100%; text-align: center; }
 }
